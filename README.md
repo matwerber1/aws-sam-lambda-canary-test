@@ -1,9 +1,15 @@
 # aws-sam-lambda-canary-test
 
+## Purpose
+
+The purpose of this project is to test AWS CodeDeploy's canary deployment method for a Lambda function. 
+
+Using the AWS Serverless Application Model (SAM), we deploy a CloudFormation template that creates a Lambda function, CloudWatch alarms, and a CodeDeploy project. When a code change is made to the Lambda function and deployed via CloudFormation (or a SAM CLI deployment), a CodeDeploy project creates a new version of the Lambda with the new code and activates a canary deployment by which the "live" version alias of the Lambda function sends 10% of traffic to the new version and 90% of traffic to the old version. The two CloudWatch alarms monitor for errors with the new Lambda version and if errors are detected, the alarms trigger. If the alarms trigger, the CodeDeploy project managing the canary deployment rolls back the deployment by shifting 100% of traffic to the old, stable version of the Lambda. 
+
 ## Prerequisites
 
-* AWS SAM CLI
-* AWS CLI
+* [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
 
 ## Usage
 
