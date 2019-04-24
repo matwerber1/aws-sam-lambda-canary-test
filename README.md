@@ -17,7 +17,7 @@ The **test-function.sh** script invokes the Lambda function continuously in a lo
 
 ## Usage
 
-1. Within **deploy.sh**, edit parameters below as needed. The BUCKET should be an S3 bucket that can be used to store packaged CloudFormation artifacts:
+1. Within **deploy.sh**, edit parameters below as needed. The BUCKET should be changed to an S3 bucket that already exists and to which you have read/write access. This bucket is used to store packaged CloudFormation artifacts:
 
 ```sh
 BUCKET=werberm-sandbox
