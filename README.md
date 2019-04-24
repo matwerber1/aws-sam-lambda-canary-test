@@ -45,7 +45,7 @@ to this...
 console.log('...')
 ```
 
-4. While the canary deployment is underway, you can start sending invocations to the Lambda fumction by running **./test-function.sh**. The invocations will be split 90/10 between the original and updated Lambda version. You can verify the canary deployment is underway from within the CodeDeploy console. This script should activate CloudWatch alarms that ultimately trigger a rollback in the CodeDeploy deployment. 
+4. While the canary deployment is underway, you can start sending invocations to the Lambda function by running **./test-function.sh**. The invocations will be split 90/10 between the original and updated Lambda version. You can verify the canary deployment is underway from within the CodeDeploy console. This script should activate CloudWatch alarms that ultimately trigger a rollback in the CodeDeploy deployment. 
 
 ```sh
 ./test-function.sh
