@@ -1,3 +1,6 @@
+packaged.yaml
+invoke-output.fail
+invoke-output.succeed
 
 # Created by https://www.gitignore.io/api/osx,node,linux,windows
 
