@@ -5,6 +5,11 @@
 # to intentionally and repeatedly invoke the canary Lambda function and
 # trigger a failure. That should cause a rollback to occur. 
 
+# When you run this, you should see that the ExecutedVersion should alternate
+# between the new version (from your just-deployed function update) and the
+# last successful version. The traffic split should be approximately 10% new
+# and 90% old. 
+
 STACK=aws-sam-lambda-canary-test
 FUNCTION=$(
     aws cloudformation describe-stacks \
